@@ -37,8 +37,10 @@ class DevAudioPlayer {
     
     if (this.options.autoplay) {
       // Chrome policy might block this
-      this.play().catch(() => {
-        console.log('Autoplay blocked by browser policy');
+      this.play().catch((err) => {
+        console.log('Autoplay blocked by browser policy:', err.message);
+        this.isPlaying = false;
+        this.updatePlayButton();
       });
     }
   }
@@ -145,12 +147,12 @@ class DevAudioPlayer {
   }
 
   play() {
-    this.audio.play().then(() => {
+    return this.audio.play().then(() => {
       this.isPlaying = true;
       this.updatePlayButton();
       this.visualizer.start();
       this.savePreference(true);
-    }).catch(err => console.error('Playback failed:', err));
+    });
   }
 
   pause() {
