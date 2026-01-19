@@ -75,7 +75,7 @@ Initialize the player:
 
 | Option | Type | Default | Description |
 |--------|------|---------|-------------|
-| `src` | `string` | **Required** | URL to the audio file. |
+| `src` | `string` | **Required** | URL to the audio file (MP3, WAV, OGG). YouTube URLs are **not** supported. |
 | `container` | `string` | `'body'` | CSS selector for the container element. |
 | `theme` | `'dark' \| 'light'` | `'dark'` | Color theme of the player. |
 | `autoplay` | `boolean` | `false` | Auto-start playback (subject to browser policy). |
