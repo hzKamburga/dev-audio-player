@@ -22,17 +22,30 @@ A lightweight, dependency-free audio player library designed specifically for de
 
 You can try the player directly in this README if you are viewing this on a platform that supports HTML embedding, or check out the [Live Demo Page](https://hzkamburga.github.io/dev-audio-player/demo/).
 
-## Usage in GitHub READMEs (Profile)
+## Usage in GitHub Profile README
 
-**Important:** GitHub `README.md` files **do not** support running custom JavaScript or interactive elements for security reasons. You cannot embed the actual player directly into a GitHub profile or repository README.
+Since GitHub blocks direct JavaScript execution in README files, you can use an **iframe** approach if you have a personal website, or simply link to a hosted player page.
 
-Instead, you should add a link to your live portfolio or a demo page. You can use a badge or a screenshot:
+However, the most common and supported way to add "interactive-like" content to a GitHub profile is using a **Link to a Hosted Player**.
+
+### Option 1: The "Play Music" Badge (Recommended)
+
+Add this to your `README.md`:
 
 ```markdown
-[![Play Music](https://img.shields.io/badge/Play-My_Portfolio_Music-blue?style=for-the-badge&logo=applemusic)](https://your-username.github.io/your-repo/demo/)
+[![Play Music](https://img.shields.io/badge/Play-My_Portfolio_Music-blue?style=for-the-badge&logo=applemusic)](https://hzkamburga.github.io/dev-audio-player/demo/play.html?src=YOUR_AUDIO_URL&theme=dark)
 ```
 
-Or simply link to your deployed site where the player is running.
+Replace `YOUR_AUDIO_URL` with the direct link to your mp3 file.
+
+### Option 2: Embed via SVG (Advanced)
+
+If you want a player *directly* visible in your profile, you must use a generated SVG image (like `github-readme-stats`). This library is a **JavaScript** library, so it requires a browser environment to run. It cannot run *inside* the markdown rendering engine of GitHub.
+
+**To use this library for your profile:**
+1. Host the `demo/play.html` page (it's already hosted if you fork this repo and enable Pages).
+2. Link to it from your profile.
+3. When users click the link, it opens a minimal player page playing your song.
 
 ## Quick Start (for Websites/Portfolios)
 
