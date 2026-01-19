@@ -1,61 +1,55 @@
 # Dev Audio Player
 
-A lightweight, dependency-free audio player library designed specifically for developer portfolios and GitHub Pages.
+Geliştirici portfolyoları ve GitHub Pages için tasarlanmış, hafif ve bağımlılık gerektirmeyen bir ses oynatıcı kütüphanesi.
 
-![License](https://img.shields.io/badge/license-AGPL%20v3.0-blue.svg)
-![Size](https://img.shields.io/badge/size-~5kb-green.svg)
-![AI Generated](https://img.shields.io/badge/AI-Generated-orange.svg)
+![Lisans](https://img.shields.io/badge/license-AGPL%20v3.0-blue.svg)
+![Boyut](https://img.shields.io/badge/size-~5kb-green.svg)
+![Yapay Zeka ile Üretildi](https://img.shields.io/badge/AI-Generated-orange.svg)
 
-> **Note**: This project was developed with the assistance of Artificial Intelligence.
+> **Not**: Bu proje Yapay Zeka desteği ile geliştirilmiştir.
 
-## Features
+## Özellikler
 
-- **Zero Dependencies**: Pure Vanilla JS, no frameworks required.
-- **CDN Ready**: Works instantly via jsDelivr.
-- **Themable**: Built-in Dark and Light themes.
-- **Visualizer**: Optional mini audio visualizer using Web Audio API.
-- **Smart State**: Remembers play/pause state across page reloads.
-- **Accessible**: Keyboard shortcuts (Space to toggle) and ARIA labels.
-- **Responsive**: Adapts to container width.
+- **Sıfır Bağımlılık**: Saf Vanilla JS, framework gerektirmez.
+- **CDN Hazır**: jsDelivr üzerinden anında çalışır.
+- **Temalar**: Dahili Koyu (Dark) ve Açık (Light) temalar.
+- **Görselleştirici**: Web Audio API kullanan opsiyonel mini ses görselleştirici.
+- **Akıllı Durum**: Sayfa yenilendiğinde oynatma/duraklatma durumunu hatırlar.
+- **Erişilebilir**: Klavye kısayolları (Boşluk tuşu ile oynat/duraklat) ve ARIA etiketleri.
+- **Duyarlı**: Konteyner genişliğine uyum sağlar.
 
-## Live Demo
+## GitHub Profilinde Kullanım
 
-You can try the player directly in this README if you are viewing this on a platform that supports HTML embedding, or check out the [Live Demo Page](https://hzkamburga.github.io/dev-audio-player/demo/).
+**Önemli:** GitHub `README.md` dosyaları güvenlik nedeniyle doğrudan JavaScript çalıştırmayı veya etkileşimli öğeleri **desteklemez**. Yani oynatıcıyı doğrudan profil sayfanıza gömemezsiniz.
 
-## Usage in GitHub Profile README
+Bunun yerine, kullanıcıları şarkınızın çaldığı özel bir sayfaya yönlendiren bir **"Müzik Çal" rozeti (badge)** kullanabilirsiniz.
 
-Since GitHub blocks direct JavaScript execution in README files, you can use an **iframe** approach if you have a personal website, or simply link to a hosted player page.
+### Önerilen Yöntem: "Müzik Çal" Rozeti
 
-However, the most common and supported way to add "interactive-like" content to a GitHub profile is using a **Link to a Hosted Player**.
-
-### Option 1: The "Play Music" Badge (Recommended)
-
-Add this to your `README.md`:
+Profil `README.md` dosyanıza şu kodu ekleyin:
 
 ```markdown
-[![Play Music](https://img.shields.io/badge/Play-My_Portfolio_Music-blue?style=for-the-badge&logo=applemusic)](https://hzkamburga.github.io/dev-audio-player/demo/play.html?src=YOUR_AUDIO_URL&theme=dark)
+[![Müzik Çal](https://img.shields.io/badge/Müzik_Çal-Portfolyo_Müziğim-blue?style=for-the-badge&logo=applemusic)](https://hzkamburga.github.io/dev-audio-player/demo/play.html?src=SES_DOSYASI_URL&theme=dark)
 ```
 
-Replace `YOUR_AUDIO_URL` with the direct link to your mp3 file.
+`SES_DOSYASI_URL` kısmını kendi MP3 dosyanızın doğrudan bağlantısı ile değiştirin.
 
-### Option 2: Embed via SVG (Advanced)
+**Nasıl Çalışır?**
+1. Ziyaretçi profilinizdeki "Müzik Çal" butonuna tıklar.
+2. Yeni bir sekmede minimal bir oynatıcı sayfası açılır.
+3. Müzik otomatik olarak çalmaya başlar (tarayıcı izin verirse) veya kullanıcı oynat butonuna basar.
 
-If you want a player *directly* visible in your profile, you must use a generated SVG image (like `github-readme-stats`). This library is a **JavaScript** library, so it requires a browser environment to run. It cannot run *inside* the markdown rendering engine of GitHub.
+## Web Siteleri İçin Hızlı Başlangıç
 
-**To use this library for your profile:**
-1. Host the `demo/play.html` page (it's already hosted if you fork this repo and enable Pages).
-2. Link to it from your profile.
-3. When users click the link, it opens a minimal player page playing your song.
+Kendi web sitenizde (örneğin portfolyonuzda) kullanmak için:
 
-## Quick Start (for Websites/Portfolios)
-
-Add the script to your HTML file (e.g., `index.html`):
+HTML dosyanıza script'i ekleyin:
 
 ```html
 <script src="https://cdn.jsdelivr.net/gh/hzKamburga/dev-audio-player@main/dist/dev-audio-player.min.js"></script>
 ```
 
-Initialize the player:
+Onyatıcıyı başlatın:
 
 ```html
 <div id="my-player"></div>
@@ -69,47 +63,40 @@ Initialize the player:
 </script>
 ```
 
-## API Reference
+## API Referansı
 
 ### `createPlayer(options)`
 
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `src` | `string` | **Required** | URL to the audio file (MP3, WAV, OGG). YouTube URLs are **not** supported. |
-| `container` | `string` | `'body'` | CSS selector for the container element. |
-| `theme` | `'dark' \| 'light'` | `'dark'` | Color theme of the player. |
-| `autoplay` | `boolean` | `false` | Auto-start playback (subject to browser policy). |
-| `loop` | `boolean` | `false` | Loop audio when finished. |
-| `volume` | `number` | `1.0` | Initial volume (0.0 to 1.0). |
+| Seçenek | Tip | Varsayılan | Açıklama |
+|---------|-----|------------|----------|
+| `src` | `string` | **Zorunlu** | Ses dosyası URL'si (MP3, WAV, OGG). YouTube URL'leri desteklenmez. |
+| `container` | `string` | `'body'` | Konteyner elementi için CSS seçicisi. |
+| `theme` | `'dark' \| 'light'` | `'dark'` | Oynatıcı renk teması. |
+| `autoplay` | `boolean` | `false` | Otomatik oynatma (tarayıcı politikasına tabidir). |
+| `loop` | `boolean` | `false` | Bittiğinde başa sar. |
+| `volume` | `number` | `1.0` | Başlangıç ses seviyesi (0.0 - 1.0). |
 
-## Chrome Autoplay Policy
+## Chrome Otomatik Oynatma Politikası
 
-Modern browsers (Chrome, Safari, Firefox) block audio autoplay until the user interacts with the page (click, tap, keypress).
+Modern tarayıcılar (Chrome, Safari, Firefox), kullanıcı sayfayla etkileşime girene kadar (tıklama, dokunma, tuşa basma) sesin otomatik başlamasını engeller.
 
-- This library respects this policy.
-- The Audio Context (visualizer) initializes only after the first user interaction.
-- If `autoplay: true` is set, the player will attempt to play. If blocked, it will log a message and wait for user interaction.
+- Bu kütüphane bu politikaya saygı duyar.
+- Görselleştirici (Visualizer) sadece ilk kullanıcı etkileşiminden sonra başlar.
+- `autoplay: true` ayarlanırsa, oynatıcı çalmayı dener. Engellenirse konsola bilgi verir ve kullanıcı etkileşimi bekler.
 
-## Development
+## Geliştirme
 
-1. Clone the repository
-2. Install dependencies:
+1. Depoyu klonlayın
+2. Bağımlılıkları yükleyin:
    ```bash
    npm install
    ```
-3. Build the project:
+3. Projeyi derleyin:
    ```bash
    npm run build
    ```
-4. Open `demo/index.html` to see the result.
+4. Sonucu görmek için `demo/index.html` dosyasını açın.
 
-## Publishing to GitHub Pages & jsDelivr
-
-1. Push your code to a GitHub repository.
-2. Create a release tag (e.g., `v1.0.0`).
-3. Your file will be automatically available at:
-   `https://cdn.jsdelivr.net/gh/YOUR_USERNAME/YOUR_REPO@v1.0.0/dist/dev-audio-player.min.js`
-
-## License
+## Lisans
 
 GNU Affero General Public License v3.0 (AGPL-3.0)
