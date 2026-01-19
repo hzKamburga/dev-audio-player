@@ -19,7 +19,9 @@ class DevAudioPlayer {
       return;
     }
 
-    this.audio = new Audio(this.options.src);
+    this.audio = new Audio();
+    this.audio.crossOrigin = "anonymous";
+    this.audio.src = this.options.src;
     this.audio.loop = this.options.loop;
     this.audio.volume = this.options.volume;
     
