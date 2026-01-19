@@ -22,9 +22,21 @@ A lightweight, dependency-free audio player library designed specifically for de
 
 You can try the player directly in this README if you are viewing this on a platform that supports HTML embedding, or check out the [Live Demo Page](https://hzkamburga.github.io/dev-audio-player/demo/).
 
-## Quick Start
+## Usage in GitHub READMEs (Profile)
 
-Add the script to your HTML file:
+**Important:** GitHub `README.md` files **do not** support running custom JavaScript or interactive elements for security reasons. You cannot embed the actual player directly into a GitHub profile or repository README.
+
+Instead, you should add a link to your live portfolio or a demo page. You can use a badge or a screenshot:
+
+```markdown
+[![Play Music](https://img.shields.io/badge/Play-My_Portfolio_Music-blue?style=for-the-badge&logo=applemusic)](https://your-username.github.io/your-repo/demo/)
+```
+
+Or simply link to your deployed site where the player is running.
+
+## Quick Start (for Websites/Portfolios)
+
+Add the script to your HTML file (e.g., `index.html`):
 
 ```html
 <script src="https://cdn.jsdelivr.net/gh/hzKamburga/dev-audio-player@main/dist/dev-audio-player.min.js"></script>
