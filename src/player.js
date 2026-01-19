@@ -162,6 +162,9 @@ class DevAudioPlayer {
       this.audio.volume = e.target.value;
     });
 
+    // Ensure volume is set initially
+    this.audio.volume = this.options.volume;
+
     // Visibility change
     document.addEventListener('visibilitychange', () => {
       if (document.hidden && this.isPlaying) {

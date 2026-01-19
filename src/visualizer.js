@@ -22,9 +22,11 @@ export class Visualizer {
         this.audioContext = new AudioContext();
         this.analyser = this.audioContext.createAnalyser();
         try {
-          this.source = this.audioContext.createMediaElementSource(this.audio);
-          this.source.connect(this.analyser);
-          this.analyser.connect(this.audioContext.destination);
+          if (!this.source) {
+            this.source = this.audioContext.createMediaElementSource(this.audio);
+            this.source.connect(this.analyser);
+            this.analyser.connect(this.audioContext.destination);
+          }
         } catch (e) {
           console.warn('Visualizer disabled: CORS restriction or audio source error.', e);
           this.source = null; // Disable visualizer
