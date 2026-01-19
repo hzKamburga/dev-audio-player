@@ -23,17 +23,6 @@
             max-width: 400px;
             padding: 20px;
         }
-        .back-link {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            color: #888;
-            text-decoration: none;
-            font-size: 14px;
-        }
-        .back-link:hover {
-            color: #fff;
-        }
     </style>
 </head>
 <body>
@@ -43,10 +32,10 @@
     <script>
         // Parse URL parameters
         const params = new URLSearchParams(window.location.search);
-        const src = params.get('src');
+        let src = params.get('src');
         const theme = params.get('theme') || 'dark';
         const volume = parseFloat(params.get('volume')) || 1.0;
-        const autoplay = params.get('autoplay') !== 'false'; // Default to true for this page
+        const autoplay = params.get('autoplay') !== 'false';
 
         // Apply body theme
         if (theme === 'light') {
@@ -54,6 +43,13 @@
         }
 
         if (src) {
+            // Decode the URL properly to handle complex query parameters in the source URL
+            try {
+                src = decodeURIComponent(src);
+            } catch (e) {
+                console.warn('Failed to decode src URL', e);
+            }
+
             createPlayer({
                 container: '#player-container',
                 src: src,
