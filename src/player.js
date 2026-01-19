@@ -135,9 +135,19 @@ class DevAudioPlayer {
     // Audio events
     this.audio.addEventListener('timeupdate', () => this.updateProgress());
     this.audio.addEventListener('ended', () => {
-      this.isPlaying = false;
-      this.updatePlayButton();
-      this.visualizer.stop();
+      if (this.options.loop) {
+        this.audio.currentTime = 0;
+        this.play();
+      } else {
+        this.isPlaying = false;
+        this.updatePlayButton();
+        this.visualizer.stop();
+      }
+    });
+    this.audio.addEventListener('error', (e) => {
+        console.error('Audio playback error:', e);
+        console.error('Error code:', this.audio.error ? this.audio.error.code : 'unknown');
+        console.error('Error message:', this.audio.error ? this.audio.error.message : 'unknown');
     });
 
     // Progress bar click
