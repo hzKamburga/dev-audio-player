@@ -2,8 +2,11 @@
 
 A lightweight, dependency-free audio player library designed specifically for developer portfolios and GitHub Pages.
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![License](https://img.shields.io/badge/license-AGPL%20v3.0-blue.svg)
 ![Size](https://img.shields.io/badge/size-~5kb-green.svg)
+![AI Generated](https://img.shields.io/badge/AI-Generated-orange.svg)
+
+> **Note**: This project was developed with the assistance of Artificial Intelligence.
 
 ## Features
 
@@ -84,4 +87,4 @@ Modern browsers (Chrome, Safari, Firefox) block audio autoplay until the user in
 
 ## License
 
-MIT
+GNU Affero General Public License v3.0 (AGPL-3.0)

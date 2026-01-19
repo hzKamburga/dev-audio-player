@@ -10,6 +10,7 @@ class DevAudioPlayer {
       volume: 1.0,
       theme: 'dark',
       container: 'body',
+      crossOrigin: null, // Default to null to ensure playback works even if server doesn't support CORS
       ...options
     };
 
@@ -20,7 +21,30 @@ class DevAudioPlayer {
     }
 
     this.audio = new Audio();
-    this.audio.crossOrigin = "anonymous";
+    // Only set crossOrigin if we are not running locally (file://) to avoid local CORS issues
+    // or if the user explicitly wants it. For now, we default to anonymous for CDN usage.
+    // However, some servers (like SoundHelix) might not send CORS headers, causing playback failure
+    // if crossOrigin is set.
+    // Strategy: Try without crossOrigin first for playback. 
+    // Visualizer requires crossOrigin, but if it fails, we just won't have visualizer.
+    
+    // Actually, for the visualizer to work with external audio, the server MUST support CORS.
+    // If the server doesn't support CORS, we cannot use the visualizer.
+    // But we should still allow playback.
+    
+    // Let's make crossOrigin optional or try to detect.
+    // For this specific error: "Access-Control-Allow-Origin header is present on the requested resource"
+    // It means SoundHelix DOES NOT allow CORS.
+    // So we must NOT set crossOrigin for SoundHelix if we want playback.
+    // But then Visualizer won't work.
+    
+    // To fix the immediate playback error, we remove crossOrigin by default, 
+    // or make it an option.
+    
+    if (this.options.crossOrigin) {
+        this.audio.crossOrigin = this.options.crossOrigin;
+    }
+    
     this.audio.src = this.options.src;
     this.audio.loop = this.options.loop;
     this.audio.volume = this.options.volume;
