@@ -7,20 +7,24 @@ A lightweight, dependency-free audio player library designed specifically for de
 
 ## Features
 
-- 🎵 **Zero Dependencies**: Pure Vanilla JS, no frameworks required.
-- 🚀 **CDN Ready**: Works instantly via jsDelivr.
-- 🎨 **Themable**: Built-in Dark and Light themes.
-- 📊 **Visualizer**: Optional mini audio visualizer using Web Audio API.
-- 💾 **Smart State**: Remembers play/pause state across page reloads.
-- ⌨️ **Accessible**: Keyboard shortcuts (Space to toggle) and ARIA labels.
-- 📱 **Responsive**: Adapts to container width.
+- **Zero Dependencies**: Pure Vanilla JS, no frameworks required.
+- **CDN Ready**: Works instantly via jsDelivr.
+- **Themable**: Built-in Dark and Light themes.
+- **Visualizer**: Optional mini audio visualizer using Web Audio API.
+- **Smart State**: Remembers play/pause state across page reloads.
+- **Accessible**: Keyboard shortcuts (Space to toggle) and ARIA labels.
+- **Responsive**: Adapts to container width.
 
-## Quick Start (30 Seconds)
+## Live Demo
+
+You can try the player directly in this README if you are viewing this on a platform that supports HTML embedding, or check out the [Live Demo Page](https://hzkamburga.github.io/dev-audio-player/demo/).
+
+## Quick Start
 
 Add the script to your HTML file:
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/USERNAME/REPO@v1.0.0/dist/dev-audio-player.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/hzKamburga/dev-audio-player@main/dist/dev-audio-player.min.js"></script>
 ```
 
 Initialize the player:
@@ -31,13 +35,13 @@ Initialize the player:
 <script>
   createPlayer({
     container: '#my-player',
-    src: 'path/to/your/audio.mp3',
+    src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
     theme: 'dark'
   });
 </script>
 ```
 
-## API
+## API Reference
 
 ### `createPlayer(options)`
 
