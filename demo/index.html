@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Audio Player Demo</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            line-height: 1.6;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        h1 {
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 40px;
+        }
+        .demo-section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        .demo-section h2 {
+            margin-top: 0;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #444;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dev Audio Player</h1>
+    <p class="subtitle">A lightweight, dependency-free audio player for developer portfolios.</p>
+
+    <div class="demo-section">
+        <h2>Dark Theme (Default)</h2>
+        <div id="player-dark"></div>
+    </div>
+
+    <div class="demo-section">
+        <h2>Light Theme</h2>
+        <div id="player-light"></div>
+    </div>
+
+    <script src="../dist/dev-audio-player.min.js"></script>
+    <script>
+        // Dark Theme Player
+        createPlayer({
+            container: '#player-dark',
+            src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+            theme: 'dark',
+            volume: 0.5
+        });
+
+        // Light Theme Player
+        createPlayer({
+            container: '#player-light',
+            src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
+            theme: 'light',
+            volume: 0.3
+        });
+    </script>
+</body>
+</html>

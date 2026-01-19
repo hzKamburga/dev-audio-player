@@ -1,0 +1,20 @@
+{
+  "name": "dev-audio-player",
+  "version": "1.0.0",
+  "description": "A lightweight audio player library for developer portfolios",
+  "main": "dist/dev-audio-player.min.js",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "keywords": [
+    "audio-player",
+    "portfolio",
+    "vanilla-js",
+    "visualizer"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.19.0"
+  }
+}
