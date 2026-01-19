@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Audio Player Test</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background: #222;
+            color: #fff;
+        }
+        .test-container {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #444;
+            border-radius: 8px;
+        }
+        h2 { margin-top: 0; }
+    </style>
+</head>
+<body>
+    <h1>Manual Test Suite</h1>
+
+    <div class="test-container">
+        <h2>Test 1: Basic Player (Dark)</h2>
+        <div id="player1"></div>
+    </div>
+
+    <div class="test-container" style="background: #fff; color: #333;">
+        <h2>Test 2: Light Theme</h2>
+        <div id="player2"></div>
+    </div>
+
+    <div class="test-container">
+        <h2>Test 3: Autoplay (Check Console)</h2>
+        <div id="player3"></div>
+    </div>
+
+    <script src="../dist/dev-audio-player.min.js"></script>
+    <script>
+        // Test 1: Basic
+        createPlayer({
+            container: '#player1',
+            src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+            theme: 'dark'
+        });
+
+        // Test 2: Light
+        createPlayer({
+            container: '#player2',
+            src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
+            theme: 'light'
+        });
+
+        // Test 3: Autoplay
+        createPlayer({
+            container: '#player3',
+            src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
+            autoplay: true,
+            volume: 0.2
+        });
+    </script>
+</body>
+</html>
